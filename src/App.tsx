@@ -1,21 +1,46 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
+import { useDispatch } from './hooks/hooks';
+import { getData } from './utils/httpClient';
+import { getCategories } from './services/categoryHelper';
+import { Product } from './types/Product';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 import './App.scss';
 
-interface Props {
-  onClick: () => void;
-  children: React.ReactNode;
-}
+export const App = () => {
+  const dispatch = useDispatch();
 
-export const Provider: React.FC<Props> = React.memo(({ onClick, children }) => (
-  <button type="button" onClick={onClick}>
-    {children}
-  </button>
-));
+  useEffect(() => {
+    dispatch({ type: 'fetchStart' });
 
-export const App: React.FC = () => {
+    getData<Product[]>('api/products')
+      .then(products => dispatch({ type: 'fetchSuccess', payload: products }))
+      .catch(() =>
+        dispatch({
+          type: 'fetchFailed',
+          payload: 'Sorry, something went wrong. Please, try later.',
+        }),
+      );
+
+    getCategories()
+      .then(categoriesList =>
+        dispatch({ type: 'loadCategories', payload: categoriesList }),
+      )
+      .catch(() =>
+        dispatch({
+          type: 'fetchFailed',
+          payload: 'Sorry, something went wrong. Please, try later.',
+        }),
+      );
+  }, [dispatch]);
+
   return (
-    <div className="starter">
-      <Provider onClick={() => ({})}>TodoList</Provider>
+    <div className="page">
+      <Header />
+      <h1 className="page__hidden">Product Catalog</h1>
+      <Outlet />
+      <Footer />
     </div>
   );
 };
