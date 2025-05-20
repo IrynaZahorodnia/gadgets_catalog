@@ -24,13 +24,25 @@ Click [FIGMA PAGE](https://www.figma.com/design/xMK2Dy0mfBbJJSNctmOuLW/Phone-cat
 
 ## To set up the project locally
 1. Clone the repository:
-- ```git clone https://github.com/IrynaZahorodnia/gadgets_catalog.git```
-- ```cd 2048_game_js```
+```
+git clone https://github.com/IrynaZahorodnia/gadgets_catalog.git
+```
+```
+cd 2048_game_js
+```
 2. Install dependencies:
-- ```npm install```
-- or
-- ```yarn install```
+```
+npm install
+```
+or
+```
+yarn install
+```
 3. Run the project locally:
-- ```npm start```
-- or
-- ```yarn start```
+```
+npm start
+```
+or
+```
+yarn start
+```
