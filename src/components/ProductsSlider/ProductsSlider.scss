@@ -1,4 +1,4 @@
-@import '../../styles/main';
+@use '../../styles/utils/index.scss' as *;
 
 .section {
   &__top {

@@ -1,4 +1,4 @@
-@import '../../styles/main';
+@use '../../styles/utils/index.scss' as *;
 
 .footer {
   background-color: $color-white;

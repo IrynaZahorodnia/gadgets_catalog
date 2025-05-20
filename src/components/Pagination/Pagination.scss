@@ -1,4 +1,4 @@
-@import '../../styles/main';
+@use '../../styles/utils/index.scss' as *;
 
 .pagination {
   width: 100%;
@@ -42,4 +42,3 @@
     }
   }
 }
-

@@ -28,7 +28,7 @@ Click [FIGMA PAGE](https://www.figma.com/design/xMK2Dy0mfBbJJSNctmOuLW/Phone-cat
 git clone https://github.com/IrynaZahorodnia/gadgets_catalog.git
 ```
 ```
-cd 2048_game_js
+cd gadgets_catalog
 ```
 2. Install dependencies:
 ```

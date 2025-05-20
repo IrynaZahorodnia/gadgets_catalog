@@ -1,4 +1,4 @@
-@import '../../styles/main';
+@use '../../styles/utils/index.scss' as *;
 
 .not-product {
   flex: 1 1 auto;

@@ -1,4 +1,4 @@
-@import '../../styles/main';
+@use '../../styles/utils/index.scss' as *;
 
 .fav {
   background: center / 16px no-repeat url(/img/icons/favourites.svg);

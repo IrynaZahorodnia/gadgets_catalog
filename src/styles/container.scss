@@ -1,4 +1,4 @@
-@import './main';
+@use './utils/index.scss' as *;
 
 .container {
   margin-block: 24px 64px;
